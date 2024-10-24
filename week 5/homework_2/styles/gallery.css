@@ -1,0 +1,175 @@
+:root {
+    font-size: 16px;
+    --bannerHeight: calc(100vw / 16 * 9 + 1px);
+    --bannerWidth: calc(100vw / 2 * 3);
+}
+
+body {
+    background-color: #021918;
+}
+
+.witchPot {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: var(--bannerHeight);
+    background-image: url('../asset/witch_pot_16-9.webp');
+    background-size: 100% auto;
+    background-position: bottom;
+    container-type: inline-size;
+    container-name: witchPotMedia;
+}
+
+@media (max-width: 640px) {
+    .witchPot {
+        display: flex;
+        flex-direction: column-reverse;
+        align-content: center;
+        justify-content: space-around;
+        width: 100vw;
+        height: var(--bannerWidth);
+        background-image: url('../asset/witch_pot_9-16.webp');
+        background-size: 100% auto;
+        background-position: bottom;
+        container-type: inline-size;
+        container-name: witchPotMedia;
+    }
+}
+
+.explanation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(var(--bannerHeight) / 4);
+    line-height: calc(var(--bannerHeight) / 4 - var(--bannerHeight) / 16);
+    text-align: center;
+    color: white;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
+.smoke1,
+.smoke2 {
+    position: absolute;
+    filter: blur(0px);
+    transform-origin: 50% 100%;
+}
+
+.smoke1 {
+    animation: smoke1 3s linear infinite;
+    animation-delay: 0.5s;
+    height: calc(var(--bannerHeight) / 4);
+    right: 25vw;
+    top: calc(var(--bannerHeight) / 4.5);
+}
+
+.smoke2 {
+    animation: smoke2 3s linear infinite;
+    animation-delay: 1.5s;
+    height: calc(var(--bannerHeight) / 3);
+    right: 23.25vw;
+    top: calc(var(--bannerHeight) / 8.5);
+}
+
+@keyframes smoke1 {
+    0% {
+        filter: blur(0px);
+        transform: translateY(0px) scale(-1, 1);
+        opacity: 0;
+    }
+
+    25% {
+        filter: blur(3px);
+        transform: translateY(-10px) scale(-1, 1.05);
+        opacity: 0.5;
+    }
+
+    50% {
+        filter: blur(5px);
+        transform: translateY(-20px) scale(-1, 1.1);
+        opacity: 1;
+    }
+
+    75% {
+        filter: blur(5px);
+        transform: translateY(-30px) scale(-1, 1.15);
+        opacity: 0.5;
+    }
+
+    100% {
+        filter: blur(7px);
+        transform: translateY(-40px) scale(-1, 1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes smoke2 {
+    0% {
+        filter: blur(0px);
+        transform: translateY(0px) scale(1);
+        opacity: 0;
+    }
+
+    25% {
+        filter: blur(3px);
+        transform: translateY(-10px) scale(1.05);
+        opacity: 0.5;
+    }
+
+    50% {
+        filter: blur(5px);
+        transform: translateY(-20px) scale(1.1);
+        opacity: 1;
+    }
+
+    75% {
+        filter: blur(5px);
+        transform: translateY(-30px) scale(1.15);
+        opacity: 0.5;
+    }
+
+    100% {
+        filter: blur(7px);
+        transform: translateY(-40px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@container witchPotMedia (max-width: 640px) {
+    .explanation {
+        font-size: calc(var(--bannerHeight) / 3);
+        line-height: calc(var(--bannerHeight) / 3 - var(--bannerHeight) / 12);
+    }
+
+    .subtitle {
+        font-size: calc((var(--bannerHeight) / 10));
+        line-height: calc((var(--bannerHeight) / 10 * 1.3));
+        padding: 0 1.5rem;
+    }
+
+    .smoke1 {
+        height: var(--bannerHeight);
+        right: 25vw;
+        top: calc(var(--bannerHeight) / 4.5);
+    }
+
+    .smoke2 {
+        height: calc(var(--bannerHeight) * 1.2);
+        right: 22.25vw;
+        top: calc(var(--bannerHeight) / 20);
+    }
+}
+
+.gallery {
+    container-type: inline-size;
+    container-name: gallery;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% - 6rem);
+    margin: 0 auto;
+    padding: 3rem;
+}

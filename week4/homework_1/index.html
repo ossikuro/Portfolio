@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UIUX & Frontend Design</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="./styles/reset.css" />
+        <link rel="stylesheet" href="./styles/normalize.css" />
+        <link rel="stylesheet" href="./styles/general.css" />
+        <link rel="stylesheet" href="./styles/controls.css" />
+        <link rel="stylesheet" href="./styles/homePage.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logoWrapper">
+                <a class="logoButton" href="./index.html"
+                    ><img
+                        id="logoSvg"
+                        src="./asset/img/Logo.svg"
+                        alt="logotype"
+                    />
+                </a>
+            </div>
+            <address class="adresWrapper">
+                Для сотрудничества:
+                <a
+                    class="adressTelegram whiteLink"
+                    href="https://telegram.me/Olga_uixDesigner"
+                    target="_blank"
+                >
+                    <img
+                        class="icon16"
+                        src="./asset/icons/Telegram_solid_icon.svg"
+                        alt="telegram icon"
+                    />
+                    Olga_uixDesigner
+                </a>
+            </address>
+            <menu class="menuWrapper">
+                <li>
+                    <a
+                        href="index.html"
+                        class="buttonNaked buttonIconLeftS buttonTextS"
+                    >
+                        Главная
+                        <img
+                            class="buttonNakedS-Icon icon6"
+                            src="./asset/icons/Button_arrow_icon.svg"
+                            alt="arrow"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="index.html"
+                        class="buttonNaked buttonIconLeftS buttonTextS"
+                    >
+                        Резюме
+                        <img
+                            class="buttonNakedS-Icon icon6"
+                            src="./asset/icons/Button_arrow_icon.svg"
+                            alt="arrow"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="index.html"
+                        class="buttonNaked buttonIconLeftS buttonTextS"
+                    >
+                        Проекты
+                        <img
+                            class="buttonNakedS-Icon icon6"
+                            src="./asset/icons/Button_arrow_icon.svg"
+                            alt="arrow"
+                        />
+                    </a>
+                </li>
+            </menu>
+            <menu class="menuWrapper">
+                <li>
+                    <a
+                        href="index.html"
+                        class="buttonNaked buttonIconLeftS buttonTextS"
+                    >
+                        Падаванская
+                        <img
+                            class="buttonNakedS-Icon icon6"
+                            src="./asset/icons/Button_arrow_icon.svg"
+                            alt="arrow"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="index.html"
+                        class="buttonNaked buttonIconLeftS buttonTextS"
+                    >
+                        Лаборатория
+                        <img
+                            class="buttonNakedS-Icon icon6"
+                            src="./asset/icons/Button_arrow_icon.svg"
+                            alt="arrow"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="index.html"
+                        class="buttonNaked buttonIconLeftS buttonTextS"
+                    >
+                        Дареный Конь
+                        <img
+                            class="buttonNakedS-Icon icon6"
+                            src="./asset/icons/Button_arrow_icon.svg"
+                            alt="arrow"
+                        />
+                    </a>
+                </li>
+            </menu>
+        </header>
+        <main class="mainHome">
+            <div class="sketchfab-embed-wrapper">
+                <iframe
+                    title="The Great Morpheus"
+                    frameborder="0"
+                    allowfullscreen
+                    mozallowfullscreen="true"
+                    webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    xr-spatial-tracking
+                    execution-while-out-of-viewport
+                    execution-while-not-rendered
+                    web-share
+                    src="https://sketchfab.com/models/5547c76fdb1844ea97cfd876928f13cb/embed?autostart=1&camera=0&transparent=1&ui_hint=0"
+                >
+                </iframe>
+            </div>
+            <article class="introductionBlock">
+                <img
+                    class="introductionSlogan"
+                    src="./asset/img/slogan.svg"
+                    alt="Design and Development"
+                />
+                <div class="introductionTextWrapper introductionTextStyle">
+                    <p>
+                        Привет! Я дизайнер цифровых продуктов. Создаю
+                        <span id="colorizedIntroductionText"></span>,
+                    </p>
+                    <p>которые приносят прибыль и помогают бизнесу расти.</p>
+                    <script>
+                        const words = [
+                            'сайты',
+                            'приложения',
+                            'бренды',
+                            'продукты',
+                            'стратегии',
+                        ]
+                        let currentIndex = 0
+                        const textElement = document.getElementById(
+                            'colorizedIntroductionText'
+                        )
+
+                        function changeText() {
+                            // Добавляем класс для исчезновения текста
+                            textElement.classList.add('fade-out')
+
+                            // Ждем, пока текст исчезнет, затем меняем содержимое
+                            setTimeout(() => {
+                                currentIndex = (currentIndex + 1) % words.length
+                                textElement.textContent = words[currentIndex]
+
+                                // Убираем класс "fade-out" и добавляем "fade-in" для плавного появления
+                                textElement.classList.remove('fade-out')
+                                textElement.classList.add('fade-in')
+                            }, 500) // Время, необходимое для исчезновения (должно совпадать с transition)
+                        }
+
+                        // Меняем текст каждые 2 секунды
+                        setInterval(changeText, 2000)
+                    </script>
+                </div>
+                <menu class="introductionButtonsWrapper">
+                    <li class="buttonSolidWrapper">
+                        <a
+                            href="https://telegram.me/Olga_uixDesigner"
+                            class="buttonSolid buttonTextM buttonTextualM"
+                            target="_blank"
+                            >Призвать</a
+                        >
+                    </li>
+                    <li class="buttonOpaqueWrapper">
+                        <a
+                            href="https://telegram.me/Olga_uixDesigner"
+                            class="buttonOpaque buttonTextM buttonTextualM"
+                            target="_blank"
+                            >Сменить настроение</a
+                        >
+                    </li>
+                </menu>
+            </article>
+            <menu class="sideButtons">
+                <li class="buttonOpaqueWrapper">
+                    <a
+                        href="https://telegram.me/Olga_uixDesigner"
+                        class="buttonOpaque buttonIconS"
+                        target="_blank"
+                        ><img
+                            class="icon16"
+                            src="./asset/icons/instagram.svg"
+                            alt="instagram"
+                        />
+                    </a>
+                </li>
+                <li class="buttonOpaqueWrapper">
+                    <a
+                        href="https://dribbble.com/Ossikuro"
+                        class="buttonOpaque buttonIconS"
+                        target="_blank"
+                        ><img
+                            class="icon16"
+                            src="./asset/icons/dribble.svg"
+                            alt="dribble"
+                        />
+                    </a>
+                </li>
+                <li class="buttonOpaqueWrapper">
+                    <a
+                        href="https://telegram.me/Olga_uixDesigner"
+                        class="buttonOpaque buttonIconS"
+                        target="_blank"
+                        ><img
+                            class="icon16"
+                            src="./asset/icons/gitHub.svg"
+                            alt="gitHub"
+                        />
+                    </a>
+                </li>
+            </menu>
+        </main>
+        <footer>
+            <div class="timeWrapper">
+                Местное время
+                <div class="timeControler">MSC 02:24</div>
+            </div>
+            <div></div>
+            <div class="authorWrapper">
+                Ольга Топоркова
+                <div class="skillsWrapper">UI developer, Product designer</div>
+            </div>
+        </footer>
+    </body>
+</html>
